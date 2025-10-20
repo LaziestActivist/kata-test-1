@@ -8,8 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static jm.task.core.jdbc.Main.statement;
+import static jm.task.core.jdbc.util.Util.statement;
 
 public class UserDaoJDBCImpl implements UserDao {
     private final Connection connection;
@@ -25,7 +24,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 "  `lastname` VARCHAR(45) NOT NULL,\n" +
                 "  `age` INT UNSIGNED NOT NULL,\n" +
                 "  PRIMARY KEY (`id`)\n" +
-                ");";;
+                ");";
         statement.execute(ex);
     }
 

@@ -4,11 +4,11 @@ import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import static jm.task.core.jdbc.Main.getConnection;
+import static jm.task.core.jdbc.util.Util.getConnection;
+
 
 public class UserServiceImpl implements UserService {
     private static UserDao ud = new UserDaoJDBCImpl(getConnection());
