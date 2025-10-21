@@ -9,10 +9,10 @@ public class Util {
     private static final String URL = "jdbc:mysql://localhost:3306/mydbtest";
     private static final String USER = "root";
     private static final String PASSWORD = "Disko1.3";
-    public static Connection connection = null;
-    public static Statement statement = null;
+    private static Connection connection;
+    private static Statement statement;
 
-    public static Connection getConnection() {
+    static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -22,7 +22,13 @@ public class Util {
             e.printStackTrace();
             System.out.println("Connection ERROR");
         }
+    }
 
+    public static Connection getConnection() {
         return connection;
+    }
+
+    public static Statement getStatement() {
+        return statement;
     }
 }
