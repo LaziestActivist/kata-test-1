@@ -20,7 +20,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void createUsersTable(){
         try {
-            String sql = "CREATE TABLE IF NOT EXISTS `mydbtest`.`Users` (\n" +
+            String sql = "CREATE TABLE IF NOT EXISTS `Users` (\n" +
                 "  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,\n" +
                 "  `name` CHAR(40) NOT NULL,\n" +
                 "  `lastname` VARCHAR(45) NOT NULL,\n" +
