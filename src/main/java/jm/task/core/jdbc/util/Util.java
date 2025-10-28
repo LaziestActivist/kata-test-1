@@ -18,14 +18,14 @@ public class Util {
     private static final String URL = "jdbc:mysql://localhost:3306/mydbtest";
     private static final String USER = "root";
     private static final String PASSWORD = "Disko1.3";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static Connection connection;
     private static Statement statement;
-
     private static SessionFactory sessionFactory;
 
     static {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(DRIVER);
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
             statement = connection.createStatement();
             System.out.println("Connection OK");
@@ -49,10 +49,10 @@ public class Util {
                 Configuration configuration = new Configuration();
 
                 Properties settings = new Properties();
-                settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/mydbtest?useSSL=false");
-                settings.put(Environment.USER, "root");
-                settings.put(Environment.PASS, "Disko1.3");
+                settings.put(Environment.DRIVER, DRIVER);
+                settings.put(Environment.URL, URL);
+                settings.put(Environment.USER, USER);
+                settings.put(Environment.PASS, PASSWORD);
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 
                 settings.put(Environment.SHOW_SQL, "true");
